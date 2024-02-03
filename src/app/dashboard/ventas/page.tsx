@@ -1,23 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useAppContext } from '../page'
 import { obtenerVentas } from '@/app/mock/mock.service'
 import { IVenta } from '../models/venta.interface'
+import { storeApi } from '@/store'
 
 export default function Venta () {
-  const { ventas, setVentas } = useAppContext()
-  const [updateVentas, setUpdateVentas] = useState<IVenta[]>([])
-  useEffect(() => {
-    const fetchData = async () => {
-      if (typeof window !== 'undefined') {
-        const ventasData = await obtenerVentas()
-
-        console.log(ventasData)
-        setVentas(ventasData)
-      }
-    }
-    fetchData()
-  }, [])
+  const { ventas, setVentas } = storeApi()
 
   useEffect(() => {
     console.log('ventas', ventas)

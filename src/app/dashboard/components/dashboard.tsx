@@ -11,14 +11,15 @@ import { IVenta } from '../models/venta.interface'
 
 import * as Yup from 'yup'
 import React, { useState } from 'react'
+import { storeApi } from '@/store'
 // import { modificarDatos } from '@/app/mock/mock.service'
-import { useAppContext } from '../page'
 
 const MemoizedDetails = React.memo(Details)
 
 export default function Dashboard () {
+  const [loading, setLoading] = useState<boolean>(false)
   const [total, setTotal] = useState<number>(0)
-  const { clientes, sucursales, ventas } = useAppContext()
+  const { clientes, sucursales, ventas, setVentas } = storeApi()
 
   const validationSchema = Yup.object().shape({
     details: Yup.array().of(
@@ -34,13 +35,19 @@ export default function Dashboard () {
     currency: Yup.string().required('La divisa es requerida')
   })
 
-  const handleSubmit = async (values: {
-    client: string
-    branchOffice: string
-    currency: string
-    details: never[]
-    total: number
-  }) => {
+  const handleSubmit = async (
+    values: {
+      client: string
+      branchOffice: string
+      currency: string
+      details: never[]
+      total: number
+    },
+
+    formikBag: any
+  ) => {
+    setLoading(true)
+
     // Crear objeto de venta
     const findCliente = clientes.find(
       cliente => cliente.nombre === values.client
@@ -70,19 +77,11 @@ export default function Dashboard () {
       fecha: new Date().toISOString(),
       id: ventas.length + 1 + ''
     }
+    setVentas([nuevaVenta, ...ventas])
+    // en 4 segundos se agrega la venta y se limpia el formulario y se muestra un mensaje de éxito
 
-    // try {
-    //   // Llamamos a la función modificarDatos para realizar la petición POST
-    //   const resultado = await modificarDatos('/data/ventas.json', nuevaVenta)
-    //   console.log('Venta creada:', resultado)
-    //   // Puedes realizar otras acciones después de crear la venta si es necesario
-
-    //   // Limpia el formulario después de la creación exitosa
-    //   // Puedes reiniciar los valores iniciales o hacer otras acciones según tus necesidades
-    // } catch (error) {
-    //   console.error('Error al crear la venta:', error)
-    //   // Puedes manejar el error de acuerdo a tus necesidades
-    // }
+    setLoading(false)
+    formikBag.resetForm()
   }
 
   return (

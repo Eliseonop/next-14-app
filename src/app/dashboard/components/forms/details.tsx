@@ -8,12 +8,12 @@ import React, { useEffect } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Autocomplete from './autocomplete'
 import { IProducto } from '@/app/models/producto.interface'
-import { useAppContext } from '../../page'
+import { storeApi } from '@/store'
 
 const Details: React.FC<{ setTotal: (total: number) => void }> = ({
   setTotal
 }) => {
-  const { productos } = useAppContext()
+  const { productos } = storeApi()
 
   const { values, setFieldValue, errors } = useFormikContext<{
     client: string

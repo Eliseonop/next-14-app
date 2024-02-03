@@ -6,12 +6,16 @@ interface AutocompleteProps {
   options: any[] // Update the type according to your data structure
   onSelect: (selectedOption: any) => void
   onInputEmit?: (inputValue: string) => void
+  formik?: any
+  name?: string
 }
 
 const Autocomplete: React.FC<AutocompleteProps> = ({
   options,
   onSelect,
-  onInputEmit
+  onInputEmit,
+  formik,
+  name
 }) => {
   const [inputValue, setInputValue] = useState<string>('')
   const [filteredOptions, setFilteredOptions] = useState<any[]>(options)
@@ -26,7 +30,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
       option.nombre.toLowerCase().includes(trimmedValue.toLowerCase())
     )
     setFilteredOptions(filtered)
-
+    formik.setFieldValue(name, value) // Update the formik value
     // Emitir el valor del input
     if (onInputEmit) {
       onInputEmit(value)
@@ -34,8 +38,9 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
   }
 
   useEffect(() => {
-    setFilteredOptions(options)
-  }, [options])
+    if (!formik) return
+    setInputValue(formik.values[name ? name : ''])
+  }, [formik])
 
   return (
     <div className='w-full  col-span-10 relative'>

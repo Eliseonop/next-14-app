@@ -6,10 +6,10 @@ import { IDetalleProducto } from '../../models/detalleProductointerface'
 import { ICliente } from '@/app/models/cliente.interface'
 import Autocomplete from './autocomplete'
 import { ISucursal } from '@/app/models/sucursal.interface'
-import { useAppContext } from '../../page'
+import { storeApi } from '@/store'
 
 const Document: React.FC = () => {
-  const { clientes, setClientes, sucursales } = useAppContext()
+  const { clientes, setClientes, sucursales } = storeApi()
   const [isCreating, setIsCreating] = useState<boolean>(false)
   const formik = useFormikContext<{
     client: string
@@ -20,10 +20,25 @@ const Document: React.FC = () => {
   }>()
   const [inputValue, setInputValue] = useState<string>('')
 
-  const createClient = async (name: string) => {
+  const createClient = async () => {
+    const name = formik.values.client
     console.log('Creating client', name)
+
+    const trimmedValue = name.trim()
+
+    // Verificar si el cliente ya existe
+    const isExistingClient = clientes.some(
+      cliente =>
+        cliente.nombre.toLowerCase().trim() === trimmedValue.toLowerCase()
+    )
+
+    if (isExistingClient) {
+      formik.setFieldError('client', 'Client already exists')
+      return
+    }
+    // Crear el nuevo cliente
     const newCliente = {
-      rut: clientes.length + 1 + '',
+      rut: (clientes.length + 1).toString(),
       nombre: name,
       apellidos: '',
       direccion: {
@@ -34,17 +49,18 @@ const Document: React.FC = () => {
       },
       telefono: ''
     }
+
+    // Actualizar el estado de clientes
     setClientes([newCliente, ...clientes])
+
+    // Limpiar el campo de cliente en el formulario
+    formik.setFieldValue('client', name)
+    setInputValue(name)
     setIsCreating(false)
   }
   const handleInputEmit = (inputValue: string) => {
     console.log('Input value', inputValue)
-    setInputValue(inputValue)
-
-    formik.setFieldError('client', '')
-
     const trimmedValue = inputValue.trim()
-
     setIsCreating(
       !clientes.some(
         cliente =>
@@ -81,14 +97,15 @@ const Document: React.FC = () => {
               onSelect={(selectedOption: ICliente) => {
                 console.log('Selected option', selectedOption)
                 formik.setFieldValue('client', selectedOption.nombre)
-                setInputValue(selectedOption.nombre)
               }}
+              formik={formik}
+              name='client'
             />
 
             <div className='flex h-10 gap-4 col-span-2 '>
               <button
                 type='button'
-                onClick={() => createClient(inputValue)}
+                onClick={() => createClient()}
                 className={`bg-blue-500 p-2 h-full flex items-center ${
                   isCreating ? 'text-white' : 'text-gray-400 cursor-not-allowed'
                 }`}
@@ -109,7 +126,12 @@ const Document: React.FC = () => {
             Branch office
           </label>
           <div className='flex h-9 gap-4'>
-            <Autocomplete options={sucursales} onSelect={onSelectSucursales} />
+            <Autocomplete
+              options={sucursales}
+              onSelect={onSelectSucursales}
+              formik={formik}
+              name='branchOffice'
+            />
           </div>
         </div>
         <div className='flex flex-col col-span-6 md:col-span-3 '>

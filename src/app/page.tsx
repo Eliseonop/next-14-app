@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home () {
   const items = [
@@ -31,7 +32,7 @@ export default function Home () {
             <a href='#content2'>Content2</a>
           </li>
           <li className=' font-bold text-blue-500'>
-            <a href=''>Login</a>
+            <Link href='/dashboard'>Login</Link>
           </li>
         </ul>
       </nav>
@@ -47,9 +48,12 @@ export default function Home () {
               </div>
             </div>
 
-            <button className='px-6 py-2 bg-blue-400 font-bold text-base text-white w-fit '>
+            <Link
+              href='/dashboard'
+              className='px-6 py-2 bg-blue-400 font-bold text-base text-white w-fit '
+            >
               LOGIN
-            </button>
+            </Link>
           </div>
 
           <Image
