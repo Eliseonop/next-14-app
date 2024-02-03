@@ -22,7 +22,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Learn More
 
-![image](https://github.com/Eliseonop/next-14-app/assets/59000093/880a0914-ef7d-4153-9e2c-db7725cfa13e)
 
 # Documentación de la Aplicación
 
@@ -37,10 +36,16 @@ Esta documentación proporciona información sobre las funciones principales de 
 - **Descripción:** Este icono se utiliza para acceder a la sección de ventas.
 - **Cómo Usar:** Haga clic en el icono de papel con el símbolo de más para ver y gestionar las ventas existentes.
 
+![image](https://github.com/Eliseonop/next-14-app/assets/59000093/880a0914-ef7d-4153-9e2c-db7725cfa13e)
+
+
 ### Icono de Casa
 
 - **Descripción:** Este icono te llevará al dashboard principal.
 - **Cómo Usar:** Al hacer clic en el icono de casa, accederás al dashboard donde podrás crear nuevas ventas.
+
+![image](https://github.com/Eliseonop/next-14-app/assets/59000093/5bec0be0-20ba-4a8c-b217-92c92f551af4)
+
 
 ## Autenticación
 
