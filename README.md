@@ -22,15 +22,33 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+![image](https://github.com/Eliseonop/next-14-app/assets/59000093/880a0914-ef7d-4153-9e2c-db7725cfa13e)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Documentación de la Aplicación
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Introducción
 
-## Deploy on Vercel
+Esta documentación proporciona información sobre las funciones principales de la aplicación y cómo interactuar con ellas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Iconos de la Barra de Navegación
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Icono de Papel con Más (+)
+
+- **Descripción:** Este icono se utiliza para acceder a la sección de ventas.
+- **Cómo Usar:** Haga clic en el icono de papel con el símbolo de más para ver y gestionar las ventas existentes.
+
+### Icono de Casa
+
+- **Descripción:** Este icono te llevará al dashboard principal.
+- **Cómo Usar:** Al hacer clic en el icono de casa, accederás al dashboard donde podrás crear nuevas ventas.
+
+## Autenticación
+
+**Nota:** Aunque la autenticación aún no está implementada, es un componente esencial que se agregará en futuras actualizaciones de la aplicación. Mantente atento a las actualizaciones para disfrutar de funciones de autenticación seguras.
+
+## Consejos Adicionales
+
+- Puedes personalizar y mejorar la interfaz de usuario para una experiencia más intuitiva.
+- Considera agregar funcionalidades de búsqueda y filtrado para facilitar la navegación.
+
+¡Gracias por utilizar nuestra aplicación! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros.
