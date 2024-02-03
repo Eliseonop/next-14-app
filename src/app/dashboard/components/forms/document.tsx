@@ -3,10 +3,10 @@ import { PlusIcon } from '@heroicons/react/24/outline'
 import React, { useMemo, useState, useContext } from 'react'
 import { Field, FieldProps, useFormikContext } from 'formik'
 import { IDetalleProducto } from '../../models/detalleProductointerface'
-import { useAppContext } from '../dashboard'
 import { ICliente } from '@/app/models/cliente.interface'
 import Autocomplete from './autocomplete'
 import { ISucursal } from '@/app/models/sucursal.interface'
+import { useAppContext } from '../../page'
 
 const Document: React.FC = () => {
   const { clientes, setClientes, sucursales } = useAppContext()
@@ -40,6 +40,9 @@ const Document: React.FC = () => {
   const handleInputEmit = (inputValue: string) => {
     console.log('Input value', inputValue)
     setInputValue(inputValue)
+
+    formik.setFieldError('client', '')
+
     const trimmedValue = inputValue.trim()
 
     setIsCreating(
@@ -67,7 +70,7 @@ const Document: React.FC = () => {
         <div className='h-[1.5px] bg-gray-300 w-full'></div>
       </div>
       <div className='w-full mt-10 grid grid-cols-12 gap-4 flex-wrap sm:flex-nowrap'>
-        <div className='col-span-6 flex flex-col  relative '>
+        <div className='col-span-12 md:col-span-6 flex flex-col  relative '>
           <label htmlFor='client' className='text-gray-600 text-sm'>
             Client
           </label>
@@ -95,8 +98,13 @@ const Document: React.FC = () => {
               </button>
             </div>
           </div>
+          {formik.errors.client && (
+            <div className='text-red-500 w-full text-sm'>
+              {formik.errors.client}
+            </div>
+          )}
         </div>
-        <div className='flex flex-col col-span-3'>
+        <div className='flex flex-col col-span-6 md:col-span-3'>
           <label htmlFor='branchOffice' className='text-gray-600 text-sm'>
             Branch office
           </label>
@@ -104,7 +112,7 @@ const Document: React.FC = () => {
             <Autocomplete options={sucursales} onSelect={onSelectSucursales} />
           </div>
         </div>
-        <div className='flex flex-col col-span-3 '>
+        <div className='flex flex-col col-span-6 md:col-span-3 '>
           <label htmlFor='currency' className='text-gray-600 text-sm'>
             Currency
           </label>

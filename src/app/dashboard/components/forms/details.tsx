@@ -6,16 +6,16 @@ import { IDetalleProducto } from '../../models/detalleProductointerface'
 
 import React, { useEffect } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-import { useAppContext } from '../dashboard'
 import Autocomplete from './autocomplete'
 import { IProducto } from '@/app/models/producto.interface'
+import { useAppContext } from '../../page'
 
 const Details: React.FC<{ setTotal: (total: number) => void }> = ({
   setTotal
 }) => {
   const { productos } = useAppContext()
 
-  const { values, setFieldValue } = useFormikContext<{
+  const { values, setFieldValue, errors } = useFormikContext<{
     client: string
     branchOffice: string
     currency: string
@@ -45,12 +45,13 @@ const Details: React.FC<{ setTotal: (total: number) => void }> = ({
     const index = values.details.findIndex(detail => detail.id === detailId)
     const newDetails = values.details.map((detail, i) => {
       if (i === index) {
+        const quantity = detail.quantity || 1 // Asegúrate de que la cantidad sea al menos 1
         return {
           ...detail,
           name: selectedOption.nombre,
           price: selectedOption.precio,
-          subtotal: detail.quantity * selectedOption.precio,
-          quantity: 1
+          subtotal: quantity * selectedOption.precio,
+          quantity: quantity
         }
       }
       return detail
@@ -102,6 +103,16 @@ const Details: React.FC<{ setTotal: (total: number) => void }> = ({
                     name={`details.${index}.quantity`}
                     className='border-gray-300 w-full p-2'
                     onChange={(e: any) => {
+                      if (e.target.value <= 0) e.target.value = 1
+
+                      const producto = productos.find(
+                        p => p.nombre === detail.name
+                      )
+
+                      if (producto !== undefined)
+                        if (e.target.value > producto?.stock)
+                          e.target.value = producto?.stock
+
                       const newDetails = values.details.map((d, i) => {
                         if (i === index) {
                           return {
@@ -146,7 +157,7 @@ const Details: React.FC<{ setTotal: (total: number) => void }> = ({
             <button
               type='button'
               onClick={addDetails}
-              className='bg-blue-500 px-6 py-2 h-full flex items-center text-white mt-10'
+              className='bg-blue-500 px-8 py-2 h-full flex items-center text-white mt-10'
             >
               <div>Add</div>
             </button>

@@ -6,6 +6,7 @@ import {
   UserIcon,
   DocumentPlusIcon
 } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 import { useState } from 'react'
 const links = [
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
@@ -14,11 +15,11 @@ const links = [
   //   href: '/dashboard',
   //   icon: StarIcon
   // },
-  // {
-  //   name: 'Invoices',
-  //   href: '/dashboard',
-  //   icon: DocumentPlusIcon
-  // },
+  {
+    name: 'Invoices',
+    href: '/dashboard/ventas',
+    icon: DocumentPlusIcon
+  },
   // {
   //   name: 'Invoices',
   //   href: '/dashboard',
@@ -47,13 +48,13 @@ export default function SideNav () {
         {links.map(link => {
           const LinkIcon = link.icon
           return (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className='flex h-[48px]  items-center justify-center gap-2 rounded-md  p-3 text-sm font-medium text-white  md:flex-none   md:justify-start md:p-2 md:px-3'
             >
               <LinkIcon className={inEnter ? 'w-6' : 'w-6'} />
-            </a>
+            </Link>
           )
         })}
       </div>

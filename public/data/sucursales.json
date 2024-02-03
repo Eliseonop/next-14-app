@@ -1,62 +1,42 @@
 [
   {
-    "nombre": "Argentina",
-    "pais": "AR",
-    "divisa": "ARS"
-  },
-  {
-    "nombre": "Peru",
-    "pais": "PE",
-    "divisa": "PEN"
-  },
-  {
     "nombre": "French Guiana",
-    "pais": "TN",
-    "divisa": "EUR"
+    "pais": "TN"
   },
   {
     "nombre": "Oman",
-    "pais": "DZ",
-    "divisa": "DZD"
+    "pais": "DZ"
   },
   {
     "nombre": "Kyrgyz Republic",
-    "pais": "HN",
-    "divisa": "HNL"
+    "pais": "HN"
   },
   {
     "nombre": "Costa Rica",
-    "pais": "ZA",
-    "divisa": "ZAR"
+    "pais": "ZA"
   },
   {
     "nombre": "Slovakia",
-    "pais": "AW",
-    "divisa": "AWG"
+    "pais": "AW"
   },
   {
     "nombre": "Venezuela",
-    "pais": "TN",
-    "divisa": "EUR"
+    "pais": "TN"
   },
   {
     "nombre": "Burkina Faso",
-    "pais": "NF",
-    "divisa": "NIO"
+    "pais": "NF"
   },
   {
     "nombre": "Sri Lanka",
-    "pais": "SK",
-    "divisa": "EUR"
+    "pais": "SK"
   },
   {
     "nombre": "Togo",
-    "pais": "TN",
-    "divisa": "EUR"
+    "pais": "TN"
   },
   {
     "nombre": "Yemen",
-    "pais": "GE",
-    "divisa": "GEL"
+    "pais": "GE"
   }
 ]
