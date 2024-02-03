@@ -1,33 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-
-# Documentación de la Aplicación
+## Documentación de la Aplicación
 
 ## Introducción
 
 Esta documentación proporciona información sobre las funciones principales de la aplicación y cómo interactuar con ellas.
+
+## Autenticación y Login
+
+- **Descripción:** La aplicación incluye una funcionalidad de inicio de sesión para acceder al dashboard.
+- **Cómo Usar:** 
+  1. Navega a la página de inicio de sesión.
+  2. Completa el formulario de inicio de sesión con tu información.
+  3. Haz clic en "Iniciar Sesión".
+  4. Serás redirigido al dashboard principal para comenzar a utilizar la aplicación.
+
+**Nota:** Aunque la autenticación y el formulario de inicio de sesión están disponibles, actualmente no se requiere autenticación para acceder al dashboard. Esta característica se implementará en futuras actualizaciones.
+
+![image](https://github.com/Eliseonop/next-14-app/assets/59000093/7fa25a59-679e-4bf3-9c68-d83f0b975b6b)
 
 ## Iconos de la Barra de Navegación
 
@@ -57,3 +46,22 @@ Esta documentación proporciona información sobre las funciones principales de 
 - Considera agregar funcionalidades de búsqueda y filtrado para facilitar la navegación.
 
 ¡Gracias por utilizar nuestra aplicación! Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros.
+
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
