@@ -65,6 +65,7 @@ export default function Home () {
             width={500}
             height={300}
             className='w-full md:w-4/5     object-contain'
+            priority={true}
           />
         </div>
 
@@ -95,6 +96,7 @@ export default function Home () {
                     width={200}
                     height={200}
                     className=' object-left h-full'
+                    priority={true}
                   />
                   <div className='text-md text-gray-400 '>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -135,6 +137,7 @@ export default function Home () {
                 width={100}
                 height={100}
                 className='w-1/5 md:w-1/3 '
+                priority={true}
               />
               <Image
                 src='/ilustraciones/Recurso 5.png'
