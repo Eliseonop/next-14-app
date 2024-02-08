@@ -87,8 +87,13 @@ export default function Dashboard () {
   return (
     <>
       <div className='text-black '>
-        <div className='flex w-full'>
-          <Image src='/works.svg' alt='' width={100} height={100} />
+        <div className='flex w-full gap-4'>
+          <Image
+            src='/ilustraciones/Recurso 7.png'
+            alt=''
+            width={100}
+            height={100}
+          />
           <div className='w-full gap-2 flex flex-col'>
             <div className='text-4xl font-bold'>New Sale</div>
             <div className='h-[1.5px] bg-gray-300 w-full'></div>

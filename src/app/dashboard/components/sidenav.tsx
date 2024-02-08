@@ -6,26 +6,15 @@ import {
   UserIcon,
   DocumentPlusIcon
 } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 const links = [
-  { name: 'Home', href: '/dashboard', icon: HomeIcon },
-  // {
-  //   name: 'Invoices',
-  //   href: '/dashboard',
-  //   icon: StarIcon
-  // },
-  {
-    name: 'Invoices',
-    href: '/dashboard/ventas',
-    icon: DocumentPlusIcon
-  },
-  // {
-  //   name: 'Invoices',
-  //   href: '/dashboard',
-  //   icon: FolderMinusIcon
-  // },
-  { name: 'Customers', href: '/dashboard', icon: UserIcon }
+  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 8.png' },
+  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 9.png' },
+  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 10.png' },
+  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 11.png' },
+  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 12.png' }
 ]
 
 export default function SideNav () {
@@ -48,13 +37,21 @@ export default function SideNav () {
         {links.map(link => {
           const LinkIcon = link.icon
           return (
-            <Link
-              key={link.name}
-              href={link.href}
-              className='flex h-[48px]  items-center justify-center gap-2 rounded-md  p-3 text-sm font-medium text-white  md:flex-none   md:justify-start md:p-2 md:px-3'
-            >
-              <LinkIcon className={inEnter ? 'w-6' : 'w-6'} />
-            </Link>
+            <div className='w-full '>
+              <Link
+                key={link.name}
+                href={link.href}
+                className='flex h-[48px]  items-center justify-center gap-2 rounded-md  p-3 text-sm font-medium text-white  md:flex-none   md:justify-start md:p-2 md:px-3'
+              >
+                <Image
+                  src={link.icon}
+                  alt=''
+                  width={24}
+                  height={24}
+                  className={inEnter ? 'w-6' : 'w-6'}
+                ></Image>
+              </Link>
+            </div>
           )
         })}
       </div>
