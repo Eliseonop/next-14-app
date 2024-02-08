@@ -113,7 +113,7 @@ const Document: React.FC = () => {
                 disabled={!isCreating}
               >
                 <Image
-                  src='/ilustraciones/Recurso 13.png'
+                  src='/ilustraciones/Recurso13.png'
                   alt=''
                   width={24}
                   height={24}

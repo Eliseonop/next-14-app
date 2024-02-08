@@ -4,21 +4,21 @@ import Link from 'next/link'
 export default function Home () {
   const items = [
     {
-      imagen: 'ilustraciones/Recurso 2.png',
+      imagen: 'ilustraciones/Recurso2.png',
       description: 'Description 1'
     },
     {
-      imagen: 'ilustraciones/Recurso 2.png',
+      imagen: 'ilustraciones/Recurso2.png',
 
       description: 'Description 2'
     },
     {
-      imagen: 'ilustraciones/Recurso 2.png',
+      imagen: 'ilustraciones/Recurso2.png',
 
       description: 'Description 3'
     },
     {
-      imagen: 'ilustraciones/Recurso 2.png',
+      imagen: 'ilustraciones/Recurso2.png',
 
       description: 'Description 4'
     }
@@ -60,7 +60,7 @@ export default function Home () {
           </div>
 
           <Image
-            src='/ilustraciones/Recurso 3.png'
+            src='/ilustraciones/Recurso3.png'
             alt='hero'
             width={500}
             height={300}
@@ -113,7 +113,7 @@ export default function Home () {
           className='w-full h-full  flex flex-col gap-5   justify-center relative items-center'
         >
           <Image
-            src='/ilustraciones/Recurso 6.png'
+            src='/ilustraciones/Recurso6.png'
             alt='hero'
             width={500}
             height={300}
@@ -132,7 +132,7 @@ export default function Home () {
             </div>
             <div className='flex h-2/3 w-full gap-14 flex-col sm:flex-row p-12 justify-center'>
               <Image
-                src='/ilustraciones/Recurso 4.png'
+                src='/ilustraciones/Recurso4.png'
                 alt=''
                 width={100}
                 height={100}
