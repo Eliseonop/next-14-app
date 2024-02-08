@@ -4,21 +4,21 @@ import Link from 'next/link'
 export default function Home () {
   const items = [
     {
-      imagen: 'ilustraciones/Recurso2.png',
+      imagen: 'Recurso2.png',
       description: 'Description 1'
     },
     {
-      imagen: 'ilustraciones/Recurso2.png',
+      imagen: 'Recurso2.png',
 
       description: 'Description 2'
     },
     {
-      imagen: 'ilustraciones/Recurso2.png',
+      imagen: 'Recurso2.png',
 
       description: 'Description 3'
     },
     {
-      imagen: 'ilustraciones/Recurso2.png',
+      imagen: 'Recurso2.png',
 
       description: 'Description 4'
     }
@@ -60,7 +60,7 @@ export default function Home () {
           </div>
 
           <Image
-            src='/ilustraciones/Recurso3.png'
+            src='/Recurso3.png'
             alt='hero'
             width={500}
             height={300}
@@ -113,7 +113,7 @@ export default function Home () {
           className='w-full h-full  flex flex-col gap-5   justify-center relative items-center'
         >
           <Image
-            src='/ilustraciones/Recurso6.png'
+            src='/Recurso6.png'
             alt='hero'
             width={500}
             height={300}
@@ -132,7 +132,7 @@ export default function Home () {
             </div>
             <div className='flex h-2/3 w-full gap-14 flex-col sm:flex-row p-12 justify-center'>
               <Image
-                src='/ilustraciones/Recurso4.png'
+                src='/Recurso4.png'
                 alt=''
                 width={100}
                 height={100}
@@ -140,14 +140,14 @@ export default function Home () {
                 priority={true}
               />
               <Image
-                src='/ilustraciones/Recurso 5.png'
+                src='/Recurso5.png'
                 alt=''
                 width={100}
                 height={100}
                 className='w-1/5  md:w-1/3'
               />
               <Image
-                src='/ilustraciones/Recurso 4.png'
+                src='/Recurso4.png'
                 alt=''
                 width={100}
                 height={100}

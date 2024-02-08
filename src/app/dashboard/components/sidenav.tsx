@@ -10,11 +10,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 const links = [
-  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso8.png' },
-  { name: 'start', href: '/dashboard', icon: '/ilustraciones/Recurso9.png' },
-  { name: 'other', href: '/dashboard', icon: '/ilustraciones/Recurso10.png' },
-  { name: 'other2', href: '/dashboard', icon: '/ilustraciones/Recurso11.png' },
-  { name: 'other3', href: '/dashboard', icon: '/ilustraciones/Recurso12.png' }
+  { name: 'Home', href: '/dashboard', icon: '/Recurso8.png' },
+  { name: 'start', href: '/dashboard', icon: '/Recurso9.png' },
+  { name: 'other', href: '/dashboard', icon: '/Recurso10.png' },
+  { name: 'other2', href: '/dashboard', icon: '/Recurso11.png' },
+  { name: 'other3', href: '/dashboard', icon: '/Recurso12.png' }
 ]
 
 export default function SideNav () {

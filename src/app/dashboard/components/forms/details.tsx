@@ -151,7 +151,7 @@ const Details: React.FC<{ setTotal: (total: number) => void }> = ({
                     className='bg-blue-500  h-full flex items-center'
                   >
                     <Image
-                      src='/ilustraciones/Recurso 15.png'
+                      src='/Recurso15.png'
                       alt=''
                       width={24}
                       height={24}
