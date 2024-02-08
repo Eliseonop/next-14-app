@@ -11,10 +11,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 const links = [
   { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 8.png' },
-  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 9.png' },
-  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 10.png' },
-  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 11.png' },
-  { name: 'Home', href: '/dashboard', icon: '/ilustraciones/Recurso 12.png' }
+  { name: 'start', href: '/dashboard', icon: '/ilustraciones/Recurso 9.png' },
+  { name: 'other', href: '/dashboard', icon: '/ilustraciones/Recurso 10.png' },
+  { name: 'other2', href: '/dashboard', icon: '/ilustraciones/Recurso 11.png' },
+  { name: 'other3', href: '/dashboard', icon: '/ilustraciones/Recurso 12.png' }
 ]
 
 export default function SideNav () {
@@ -37,9 +37,8 @@ export default function SideNav () {
         {links.map(link => {
           const LinkIcon = link.icon
           return (
-            <div className='w-full '>
+            <div className='w-full ' key={link.name}>
               <Link
-                key={link.name}
                 href={link.href}
                 className='flex h-[48px]  items-center justify-center gap-2 rounded-md  p-3 text-sm font-medium text-white  md:flex-none   md:justify-start md:p-2 md:px-3'
               >
