@@ -7,6 +7,7 @@ import { ICliente } from '@/app/models/cliente.interface'
 import Autocomplete from './autocomplete'
 import { ISucursal } from '@/app/models/sucursal.interface'
 import { storeApi } from '@/store'
+import Image from 'next/image'
 
 const Document: React.FC = () => {
   const { clientes, setClientes, sucursales } = storeApi()
@@ -102,16 +103,22 @@ const Document: React.FC = () => {
               name='client'
             />
 
-            <div className='flex h-10 gap-4 col-span-2 '>
+            <div className='flex  gap-4 col-span-2 '>
               <button
                 type='button'
                 onClick={() => createClient()}
-                className={`bg-blue-500 p-2 h-full flex items-center ${
+                className={`w-10 h-10 ${
                   isCreating ? 'text-white' : 'text-gray-400 cursor-not-allowed'
                 }`}
                 disabled={!isCreating}
               >
-                <PlusIcon className='text-white font-bold h-5'></PlusIcon>
+                <Image
+                  src='/ilustraciones/Recurso 13.png'
+                  alt=''
+                  width={24}
+                  height={24}
+                  className='w-10 h-10 '
+                />
               </button>
             </div>
           </div>

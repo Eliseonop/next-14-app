@@ -9,6 +9,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import Autocomplete from './autocomplete'
 import { IProducto } from '@/app/models/producto.interface'
 import { storeApi } from '@/store'
+import Image from 'next/image'
 
 const Details: React.FC<{ setTotal: (total: number) => void }> = ({
   setTotal
@@ -147,9 +148,15 @@ const Details: React.FC<{ setTotal: (total: number) => void }> = ({
                   <button
                     type='button'
                     onClick={() => deleteDetail(index)}
-                    className='bg-blue-500 p-2 h-full flex items-center'
+                    className='bg-blue-500  h-full flex items-center'
                   >
-                    <XMarkIcon className='text-white font-bold h-5'></XMarkIcon>
+                    <Image
+                      src='/ilustraciones/Recurso 15.png'
+                      alt=''
+                      width={24}
+                      height={24}
+                      className='w-10 h-10 '
+                    />
                   </button>
                 </div>
               </div>
